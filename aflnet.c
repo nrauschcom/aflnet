@@ -1058,9 +1058,12 @@ region_t* extract_requests_http(unsigned char* buf, unsigned int buf_size, unsig
       region_count++;
       regions = (region_t *)ck_realloc(regions, region_count * sizeof(region_t));
       regions[region_count - 1].start_byte = cur_start;
-      regions[region_count - 1].end_byte = cur_end;
+      regions[region_count - 1].end_byte = cur_end - 2;
       regions[region_count - 1].state_sequence = NULL;
       regions[region_count - 1].state_count = 0;
+
+      printf("\n%s\n---", mem);
+      memset(buffer, 0, mem_size);
 
       mem_count = 0;
       cur_start = cur_end + 1;
