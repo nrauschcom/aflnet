@@ -1063,7 +1063,7 @@ region_t* extract_requests_http(unsigned char* buf, unsigned int buf_size, unsig
       regions[region_count - 1].state_count = 0;
 
       printf("\n%s\n---", mem);
-      memset(buffer, 0, mem_size);
+      memset(mem, 0, mem_size);
 
       mem_count = 0;
       cur_start = cur_end + 1;
